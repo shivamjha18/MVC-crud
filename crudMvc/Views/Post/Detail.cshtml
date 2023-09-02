@@ -1,0 +1,30 @@
+﻿@model crudMvc.Models.Post
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create</a>
+</p>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Image)</th>
+                <th>@Html.DisplayNameFor(model => model.Title)</th>
+                <th>@Html.DisplayNameFor(model => model.Body)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td><img src="@Model.Image" alt="Post Image" class="img-thumbnail" style="max-width: 100px;" /></td>
+                    <td>@Model.Title</td>
+                    <td>@Model.Body</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
+                        <a asp-action="Detail" asp-route-id="@Model.Id" class="btn btn-primary">Detail</a>
+                    </td>
+                </tr>
+            
+        </tbody>
+    </table>
+</div>

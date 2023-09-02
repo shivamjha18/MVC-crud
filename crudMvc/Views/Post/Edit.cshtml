@@ -1,0 +1,27 @@
+﻿@model crudMvc.Models.Post
+
+<h2>Edit Post</h2>
+
+@using (Html.BeginForm("Edit", "Post", FormMethod.Post))
+{
+   
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Title)
+        @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Body)
+        @Html.TextAreaFor(model => model.Body, new { @class = "form-control", rows = 4 })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Image)
+        @Html.TextBoxFor(model => model.Image, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+}
